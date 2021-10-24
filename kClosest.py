@@ -1,30 +1,19 @@
-def kClosest(points,K):
-    mapDistancePoint = {}  # key is distance, value is just the point
+def kClosest(points,k):
+    result = {}
 
-    for value in points:
-        distance = (value[0] ** 2 + value[1] ** 2) ** (0.5)
-        distance = round(distance, 2)
-        if distance not in mapDistancePoint:
-            mapDistancePoint[distance] = []
-            mapDistancePoint[distance].append(value)
-        else:
-            mapDistancePoint[distance].append(value)
+    for index, point in enumerate(points):
+        result[index] = calculateDistance(point)
+    result = sorted(result.items(), key=lambda x: (x[1], x[0]))
+    result = list(map(lambda x: x[0], result))
+    finalResult = []
+    finalResult = list(map(lambda x: points[x], result))
+    return (finalResult[:k])
 
-    # have a map of distance --> point
-
-    sortedKey = sorted(mapDistancePoint.items(), key=lambda x: (x[0], x[1]))
-
-    # sortedKey with the point
-
-    result = []
-    for i in range(K):
-        while len(sortedKey[i][1]) != 0:
-            value = sortedKey[i][1].pop(0)
-            result.append(value)
-    return result
+def calculateDistance(point):
+    return (point[0] ** 2 + point[1] ** 2) ** .5
 
 
 if __name__ == "__main__":
-    value = [[0, 1], [1, 0]]
+    value = [[3,3],[5,-1],[-2,4]]
     import pdb; pdb.set_trace()
-    print(kClosest(value,1))
+    print(kClosest(value,2))

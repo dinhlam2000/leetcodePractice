@@ -3,7 +3,7 @@
 # then create a new node from it using that head
 #move that smallest head to the next pointer
 # then the new node next pointer will be recursively until we cant find another head
-
+import pdb; pdb.set_trace()
 def mergeKLists(self, lists: List[ListNode]) -> ListNode:
     indexNode = -1
     smallest = float("inf")

@@ -23,11 +23,11 @@ class Solution:
         if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[i]):
             return
         if grid[i][j] == "0":
-            grid[i][j] = "visit"
+            # grid[i][j] = "visit"
             return
         if grid[i][j] == "visit":
             return
-        grid[i][j] = "visit"
+        grid[i][j] = "0"
 
         self.dfs(i + 1, j, grid)
         self.dfs(i - 1, j, grid)
