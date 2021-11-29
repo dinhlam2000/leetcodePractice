@@ -8,7 +8,7 @@ def canJump(self, nums: List[int]) -> bool:
         return True
     target = len(nums) - 1
 
-    for i in range(len(nums) - 2, -1, -1):
+    for i in range(len(nums) - 2, -1, -1):  
         max_length = i + nums[i]
         if max_length >= target:
             target = i

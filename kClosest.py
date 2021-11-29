@@ -3,9 +3,10 @@ def kClosest(points,k):
 
     for index, point in enumerate(points):
         result[index] = calculateDistance(point)
+    import pdb ; pdb.set_trace()
     result = sorted(result.items(), key=lambda x: (x[1], x[0]))
     result = list(map(lambda x: x[0], result))
-    finalResult = []
+    import pdb; pdb.set_trace()
     finalResult = list(map(lambda x: points[x], result))
     return (finalResult[:k])
 

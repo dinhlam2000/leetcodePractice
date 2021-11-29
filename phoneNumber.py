@@ -16,12 +16,8 @@ class Solution:
                  '8': ['t', 'u', 'v'],
                  '9': ['w', 'x', 'y', 'z']}
 
-        newDigit = " ".join(list(digits))
-        newDigit = newDigit.split()
-        print(newDigit[0:2])
-
         output = []
-
+        import pdb; pdb.set_trace()
         def backTrack(combination, digitList):
             if len(digitList) == 0:
                 output.append(combination)
@@ -33,3 +29,5 @@ class Solution:
             backTrack("", digits)
 
         return output
+
+print(Solution().letterCombinations('234'))

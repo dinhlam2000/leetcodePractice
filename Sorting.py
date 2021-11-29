@@ -17,23 +17,21 @@ class Solution:
                     nums[j], nums[j + 1] = nums[j + 1], nums[j]
 
     # @insertionSort, TLE
-    def insertionSort(self, nums):
-        for i in range(1, len(nums)):
-            key = nums[i]
-            j = i - 1
-            while j >= 0 and key < nums[j]:
-                nums[j + 1] = nums[j]
-                j -= 1
-            nums[j + 1] = key
+    def insertionSort(self, arr):
+        for i in range(1, len(arr)):
+            j = i
+            while j > 0 and arr[j] < arr[j-1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+                j = j - 1
 
-        # @selectionSort, TLE
-        def selectionSort(self, nums):
-            for i in range(len(nums)):
-                _min = min(nums[i:])
-                min_index = nums[i:].index(_min)
-                nums[i + min_index] = nums[i]
-                nums[i] = _min
-            return nums
+    # @selectionSort, TLE
+    def selectionSort(self, nums):
+        for i in range(len(nums)):
+            _min = min(nums[i:])
+            min_index = nums[i:].index(_min)
+            nums[i + min_index] = nums[i]
+            nums[i] = _min
+        return nums
 
     # @quickSort
     def quickSort(self, nums):
