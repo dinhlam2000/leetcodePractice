@@ -1,4 +1,5 @@
-# def subsets(nums: List[int]) -> List[List[int]]:
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
 def subsets(nums):
     # can contain an empty array
     # cannot contain duplicate number
@@ -37,8 +38,21 @@ def generateSubsets(index, nums, subsets, current_data):
     current_data.pop()
     generateSubsets(index + 1, nums, subsets, current_data)
 
-if __name__ == '__main__':
-    input = [1,2]
-    import pdb; pdb.set_trace()
-    print(subsets(input))
 
+def solution(A):
+    # write your code in Python 3.6
+    all_subsets = subsets(A)
+    all_subsets = list(filter(lambda x: len(x) > 0, all_subsets))
+    size_possible = []
+    import pdb; pdb.set_trace()
+    for index, subset in enumerate(all_subsets):
+        value = subset[0]
+        for num in subset:
+            value = value & num
+        if value > 0:
+            size_possible.append(len(subset))
+
+    return max(size_possible)
+
+input_value = [13,7,2,8,3]
+solution(input_value)

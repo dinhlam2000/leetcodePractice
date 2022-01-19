@@ -38,4 +38,4 @@ def searchRange(nums, target):
     return [-1, -1]
 
 
-print(searchRange([6,7,7,8,8,10], 10))
+print(searchRange([6,7,7,8,8,10,10,10], 8))

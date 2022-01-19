@@ -20,10 +20,13 @@ def find_sum_zero_subsets(arr):
         if sum_t == 0:
             result.append([0, index])
         if sum_t in hash_sum:
+            import pdb; pdb.set_trace()
             start_index = hash_sum[sum_t]
             result.append([start_index + 1, index])
         hash_sum[sum_t] = index
 
     return result
+
+print(find_sum_zero_subsets([3,5,-2,-4,7,-1]))
 
 # print(find_sum_zero_subsets([1, 2, 0, -3, -2]))
