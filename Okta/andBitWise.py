@@ -4,7 +4,7 @@ def subsets(nums):
     # can contain an empty array
     # cannot contain duplicate number
     # input = [1, 2] -> [] , [1], [2], [1,2]
-
+    # 2^n
     # FIRST DECISION: INCLUDE THE VALUE
     # SECOND DECISION: NOT INCLUDE THE VALUE
 

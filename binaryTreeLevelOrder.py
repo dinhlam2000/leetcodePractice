@@ -1,4 +1,4 @@
-#have a queue that starts with a root
+    #have a queue that starts with a root
 #then add the queue to a temp list
 #go through that temp list and see if there's any value that root in left and right
 #if there is append those vlaues to queue

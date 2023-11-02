@@ -49,4 +49,4 @@ def solution(S):
     return result
 
 import pdb; pdb.set_trace()
-solution('babaa')
+print(solution('babaa'))

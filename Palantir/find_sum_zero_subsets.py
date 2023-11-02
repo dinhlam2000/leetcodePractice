@@ -9,7 +9,7 @@ def find_sum_zero_subsets(arr):
     # hash map --> store all the sum value we have seen before
     # iterate through array and find the sum total we have seen at that point
     # if that sum is seen in the hash map before --> we can exTRACT out all the values at that point
-    # that is seen after until
+    # that is seen after until the current index because if the sum is in the hash map before, then everything up until that point hasn't changed
     # 3,5,-2,-4,7,-1
     # sum [3,8,6,2,9,8
     hash_sum = {}
@@ -26,4 +26,5 @@ def find_sum_zero_subsets(arr):
 
     return result
 
-# print(find_sum_zero_subsets([1, 2, 0, -3, -2]))
+print(find_sum_zero_subsets([1, 2, 0, 3,-3, -2])) # --> [[2, 2], [3, 4], [1, 5]]
+

@@ -14,8 +14,7 @@ def min_length_substring(s, t):
 
     t_map = {}
     for char in t:
-        if char not in t_map:
-            t_map[char] = t_map.get(char, 0) + 1
+        t_map[char] = t_map.get(char, 0) + 1
 
     # t_map => {char : count}
     window_size = -1
@@ -54,5 +53,8 @@ def min_length_substring(s, t):
 if __name__ == "__main__":
     from collections import Counter
 
-    result = min_length_substring(s = "bfbeadbcbcbfeaaeefcddcccbbbfaaafdbebedddf", t = "cbccfafebccdccebdd")
+    # result = min_length_substring(s = "bfbeadbcbcbfeaaeefcddcccbbbfaaafdbebedddf", t = "cbccfafebccdccebdd")
+    result = min_length_substring(s = "dcda", t = "adc")
+
     import pdb; pdb.set_trace()
+    print("here")

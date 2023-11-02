@@ -12,9 +12,10 @@ def findKthLargest(nums: [], k: int) -> int:
             # print(heap)
     return heapq.heappop(heap)
 
-def findKthLargest(self, nums: List[int], k: int) -> int:
+from typing import List
+def findKthLargest(nums: List[int], k: int) -> int:
     target = len(nums) - k
-
+    import pdb; pdb.set_trace()
     def quickSelect(l, r):
         pivot_value, pointer = nums[r], l
 
@@ -32,4 +33,5 @@ def findKthLargest(self, nums: List[int], k: int) -> int:
 
     return quickSelect(0, len(nums) - 1)
 #use a heap and maintain the length of heap and get the head of heap eventually
+print(findKthLargest(nums=[1,6,3,2,7,4],k=3))
 print(hash('lam'))

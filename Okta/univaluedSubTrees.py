@@ -6,6 +6,10 @@ class Node:
 
 
 def countSingle(root):
+    # fill in this method
+    # current node
+    # if all children are same value as current node -> + 1 counter
+    # recursively until we hit None on both the left and right children side
     count = [0]
     countSing(root, count)
     return count[0]

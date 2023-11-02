@@ -19,7 +19,7 @@ def topKFrequent(words,k):
     weightEachWord = sorted(weightEachWord.items(), key=lambda x: (-x[1], x[0]))
 
     result = list(map(lambda x: x[0], weightEachWord))
-    return result[:k]
+    return res
 
 if __name__ == "__main__":
     words = ["coding", "love", "leetcode", "i", "love", "i"]
