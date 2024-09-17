@@ -1,4 +1,4 @@
-#iterate through the list
+f#iterate through the list
 #get the next value and last value
 #then check the sum of all three numbers
 #if it's greater than 0 then decrease right, else left

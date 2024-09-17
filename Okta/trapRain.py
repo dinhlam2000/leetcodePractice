@@ -35,3 +35,7 @@ class Solution:
             if trappedRain > 0:
                 result = result + trappedRain
         return result
+
+    import pandas as pd
+    pd.
+

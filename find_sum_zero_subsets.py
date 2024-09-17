@@ -1,4 +1,4 @@
-def find_sum_zero_subsets(arr):
+def find_sum_zero_subsets(arr, target):
     # fill in
     # arr contain no values at all?
     # arr contain only 1 value --> has to be zero
@@ -17,16 +17,26 @@ def find_sum_zero_subsets(arr):
     result = []
     for index, value in enumerate(arr):
         sum_t = sum_t + value
-        if sum_t == 0:
+        if sum_t == target:
             result.append([0, index])
-        if sum_t in hash_sum:
-            import pdb; pdb.set_trace()
-            start_index = hash_sum[sum_t]
-            result.append([start_index + 1, index])
-        hash_sum[sum_t] = index
+        if (sum_t - target) in hash_sum:
+            # import pdb; pdb.set_trace()
+            start_indexes = hash_sum[sum_t - target]
+            print(start_indexes, hash_sum, sum_t-target)
+            for start_index in start_indexes:
+                result.append([start_index + 1, index])
+        # print(sum_t, hash_sum)
 
+        if sum_t - target in hash_sum:
+            hash_sum[sum_t - target] = hash_sum.get(sum_t - target).append(index)
+        else:
+            hash_sum[sum_t - target] = [index]
+    # print(hash_sum)
     return result
 
-print(find_sum_zero_subsets([3,5,-2,-4,7,-1]))
+# print(find_sum_zero_subsets([3,5,-2,-4,7,-1],0))
+print(find_sum_zero_subsets([0,5,-5,-2,-4,7,-1],0))
+# print(find_sum_zero_subsets([1,5,9,4,-13,6,9,-4,6,-11,19],6))
+
 
 # print(find_sum_zero_subsets([1, 2, 0, -3, -2]))
