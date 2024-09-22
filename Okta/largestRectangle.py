@@ -56,4 +56,4 @@ def maxRectInHist(histArr):
 
 
 print(maxRectInHist([3, 1, 4, 2, 2, 1]))
-
+print(maxRectInHist([1,8,6,2,5,4,8,3,7]))

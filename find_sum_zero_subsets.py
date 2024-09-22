@@ -27,10 +27,10 @@ def find_sum_zero_subsets(arr, target):
                 result.append([start_index + 1, index])
         # print(sum_t, hash_sum)
 
-        if sum_t - target in hash_sum:
-            hash_sum[sum_t - target] = hash_sum.get(sum_t - target).append(index)
+        if sum_t in hash_sum:
+            hash_sum[sum_t].append(index)
         else:
-            hash_sum[sum_t - target] = [index]
+            hash_sum[sum_t] = [index]
     # print(hash_sum)
     return result
 
